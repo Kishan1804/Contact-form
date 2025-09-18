@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="form-status" class="submitted">
+        <div class="message-sent">
+            <img src="assets/images/icon-success-check.svg" alt="">
+            <h2>Message Sent!</h2>
+        </div>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+
+    </div>
+    <section class="container">
+        <form id="contact-form" novalidate aria-describedby="form-status">
+            <div class="header">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="name form-field">
+                <div class="first-name-group">
+                    <label for="first-name">First Name <span>*</span></label>
+                    <input id="first-name" name="first-name" type="text" required />
+                    <span class="error" id="error-first-name" role="alert"></span>
+                </div>
+                <div class="last-name-group">
+                    <label for="last-name">Last Name <span>*</span></label>
+                    <input id="last-name" name="last-name" type="text" required />
+                    <span class="error" id="error-last-name" role="alert"></span>
+                </div>
+            </div>
+            <div class="email form-field">
+                <label for="email">Email Address <span>*</span></label>
+                <input id="email" name="email" type="email" required />
+
+                <span class="error" id="error-email" role="alert"></span>
+            </div>
+            <div class="query form-field">
+                <label for="query-type">Query Type <span>*</span></label>
+
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input id="query-type" name="query_type" type="radio" value="General Enquiry" required>
+                        <label for="general-enquiry">General Enquiry</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input id="query-type" name="query_type" type="radio" value="Support Request" required>
+                        <label for="support-request">Support Request</label>
+                    </div>
+                </div>
+
+                <span class="error" id="error-query-type" role="alert"></span>
+            </div>
+            <div class="message form-field">
+                <label for="message">Message <span>*</span></label>
+                <textarea name="message" id="message" rows="3" required></textarea>
+
+                <span class="error" id="error-message" role="alert"></span>
+            </div>
+            <div class="checkbox form-field">
+                <input id="checkbox" name="checkbox" type="checkbox" required>
+                <label for="">I consent to being contacted by the team <span>*</span></label>
+
+                <span class="error" id="error-checkbox" role="alert"></span>
+            </div>
+            <div class="form-actions">
+                <button class="btn" type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+        Coded by <a href="#">Skull</a>.
+    </div>
+    <script>
+        // Wait for the entire page to load before running the script
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // 1. Select all the container divs
+            const radioOptions = document.querySelectorAll('.radio-option');
+
+            // 2. Loop through each container div
+            radioOptions.forEach(option => {
+
+                // 3. Add a 'click' event listener to each one
+                option.addEventListener('click', function () {
+
+                    // 4. Find the radio button *inside* the div that was clicked
+                    const radioInput = option.querySelector('input[type="radio"]');
+
+                    // 5. Programmatically check that radio button
+                    radioInput.checked = true;
+                });
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

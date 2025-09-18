@@ -1,0 +1,256 @@
+/* Styling for each button-like option */
+/* .radio-option {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+} */
+
+/* This rule applies the style when the JS sets the input to 'checked' */
+/* .radio-option:has(input[type="radio"]:checked) {
+  background-color: #e0f1e7;
+  border-color: #0c7d69;
+} */
+
+:root {
+    --green200: hsl(148, 38%, 91%);
+    --green600: hsl(169, 82%, 27%);
+    --red: hsl(0, 66%, 54%);
+    --white: hsl(0, 0%, 100%);
+    --grey500: hsl(186, 15%, 59%);
+    --grey900: hsl(187, 24%, 22%);
+    --maxw: 736px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+    color: var(--grey500);
+    background-color: var(--green200);
+}
+
+.container {
+    max-width: var(--maxw);
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.header {
+    margin-bottom: 32px;
+}
+
+.header h2 {
+    font-size: 1.75rem;
+    color: var(--grey900);
+    font-weight: 700;
+    letter-spacing: 0.35px;
+}
+
+.form-field {
+    margin-bottom: 26px;
+}
+
+.form-field label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 11px;
+}
+
+.form-field label span {
+    color: var(--green600);
+}
+
+.form-field input:not([type="radio"], [type="checkbox"]),
+.form-field textarea {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 1px solid var(--grey500);
+    color: var(--grey900);
+    font-size: 1.063rem;
+}
+
+.form-field input,
+.form-field textarea {
+    cursor: pointer;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: 1px solid var(--green600);
+    border-color: transparent;
+}
+
+.name {
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+}
+
+.first-name-group,
+.last-name-group {
+    flex: 1;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.radio-option {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 14px;
+    align-items: center;
+    border: 1px solid var(--grey500);
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.radio-option label {
+    display: inline;
+    margin-bottom: 0;
+}
+
+.radio-option input:focus {
+    outline: none;
+    border-color: transparent;
+}
+
+.radio-option:has(input[type="radio"]:checked) {
+    background-color: var(--green200);
+    border-color: var(--green600);
+    accent-color: var(--green600);
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    gap: 1.188rem;
+    padding-left: 3px;
+    margin-bottom: 43px;
+}
+
+.checkbox input:focus {
+    outline: none;
+}
+
+.checkbox label {
+    margin-bottom: 0px;
+}
+
+.checkbox:has(input[type="checkbox"]:checked) {
+    accent-color: var(--green600);
+}
+
+.btn {
+    width: 100%;
+    padding: 19px 0px;
+    border-radius: 9px;
+    background-color: var(--green600);
+    color: var(--white);
+    border: none;
+    font-weight: 700;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: filter 0.3s ease-in-out;
+}
+
+.btn:hover {
+    filter: brightness(0.8);
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submitted {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 450px;
+    width: 100%;
+    background-color: var(--grey900);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 27px 24px;
+    gap: 13px;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease;
+}
+
+.submitted.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: all .5s ease;
+}
+
+.message-sent {
+    display: flex;
+    flex-direction: row;
+    color: var(--white);
+    gap: 10px;
+    padding-left: 3px;
+}
+
+.message-sent h2 {
+    font-size: 1.125rem;
+}
+
+.submitted p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.error {
+    display: inline-block;
+    color: var(--red);
+    margin-top: 5px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* Media */
+
+@media (max-width:745px) {
+
+    .name {
+        flex-direction: column;
+    }
+
+    .radio-group {
+        flex-direction: column;
+    }
+}
