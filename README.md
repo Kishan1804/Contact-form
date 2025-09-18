@@ -2,6 +2,8 @@
 
 ![Design preview for the Contact form coding challenge](./design/desktop-preview.jpg)
 
+[Live Preview](https://kishan1804.github.io/Contact-form/)
+
 ## Welcome! 👋
 
 Thanks for checking out this front-end coding challenge.
