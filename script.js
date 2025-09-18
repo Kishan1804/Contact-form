@@ -56,6 +56,7 @@ if (form) {
             ok = false;
         }else if(!isEmailValid(emailEl.value)){
             showError('email','Please enter a valid email address','--red');
+            ok = false;
         }else{
             showError('email','','--grey500');
         }
@@ -99,4 +100,5 @@ if (form) {
             form.reset();
         }    
     })
+
 }
